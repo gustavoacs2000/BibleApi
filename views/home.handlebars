@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Biblioteca</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style>
+        header {
+            background-color: #000000;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        .livros-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-gap: 20px;
+        }
+        .livros-container a {
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+            display: block;
+            position: relative;
+        }
+        .livros-container a:hover {
+            border-color: #000000;
+        }
+        .livros-container img {
+            width: 100%;
+            height: auto;
+        }
+        .livros-container p {
+            margin-top: 5px;
+            background-color: #000000;
+            color: white;
+            padding: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transition: background-color 0.3s, opacity 0.3s; /* Adicionei transição de opacidade */
+            margin: 0;
+            opacity: 1; /* Alterado para 1 para que o título seja exibido por padrão */
+        }
+        .livros-container a:hover p {
+            opacity: 1; /* Mantém a opacidade do título durante o hover */
+        }
+        footer {
+            background-color: #000000;
+            padding: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Seja bem-vindo à nossa biblioteca</h1>
+    </header>
+    <div class="livros-container">
+        <a href="/acf">
+            <img src="/icons/biblia.png" alt="Livro 1">
+            <p>Almeida Corrigida Fiel</p>
+        </a>
+        <a href="/apee">
+            <img src="/icons/biblia.png" alt="Livro 2">
+            <p>La Bible de l'Épée</p>
+        </a>
+        <a href="/bbe">
+            <img src="/icons/biblia.png" alt="Livro 3">
+            <p>Bíblia Brasileira de Estudo</p>
+        </a>
+        <a href="/kjv">
+            <img src="/icons/biblia.png" alt="Livro 4">
+            <p>Bíblia King James</p>
+        </a>
+        <a href="/nvi">
+            <img src="/icons/biblia.png" alt="Livro 5">
+            <p>Nova Versão internacional</p>
+        </a>
+        <a href="/ra">
+            <img src="/icons/biblia.png" alt="Livro 6">
+            <p>Revisada Atualizada</p>
+        </a>
+        <a href="/rvr">
+            <img src="/icons/biblia.png" alt="Livro 7">
+            <p>Reina Valera</p>
+        </a>
+    </div>
+    <footer>
+        <p>© 2024 Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

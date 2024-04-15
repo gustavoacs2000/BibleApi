@@ -1,17 +1,23 @@
 import express from 'express';
+import 'dotenv/config';
 import axios from 'axios';
-import { randomVerseRoute } from './routes/randomVerse.js'
+import { engine } from 'express-handlebars';
+import { randomVerseRoute } from './routes/randomVerse.js';
 
 const port = 3001;
 const server = express();
 
+// Configuração do Handlebars
+server.engine('handlebars', engine());
+server.set('view engine', 'handlebars');
+// Configuração para servir arquivos estáticos
+server.use(express.static('public'));
+
 server.get('/', async (req, res) => {
-    let apiBible = await axios.get(`https://www.abibliadigital.com.br/api/books`);
-    res.send(apiBible.data);
-    console.log(apiBible);
+    res.render('home')
 })
 server.use(`/randomVerse`,randomVerseRoute);
 
-server.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+server.listen(process.env.PORT, () => {
+    console.log(`Server listening on port ${process.env.PORT}`);
 });
